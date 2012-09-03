@@ -12,9 +12,9 @@
 ##  See the License for the specific language governing permissions and
 ##  limitations under the License.
 
-endir = ${localedir}/en
+en_GBdir = ${localedir}/en_GB
 
-en_DATA = UXuname.cat
+en_GB_DATA = UXuname.cat
 
 CLEANFILES = UXuname.cat
 
