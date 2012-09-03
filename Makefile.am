@@ -12,7 +12,9 @@
 ##  See the License for the specific language governing permissions and
 ##  limitations under the License.
 
-SUBDIRS = C en_GB
+DIST_SUBDIRS = C en_GB
+
+SUBDIRS = . $(NLS_SUBDIRS)
 
 bin_PROGRAMS = uname
 

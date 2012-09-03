@@ -50,12 +50,22 @@
 	(UNAME_SYSTEM|UNAME_NODENAME|UNAME_RELEASE|UNAME_VERSION|UNAME_MACHINE)
 
 static const char *short_program_name = "uname";
+
+#ifdef ENABLE_NLS
 static nl_catd msgcat;
+#endif
+
+#undef _
+#ifdef ENABLE_NLS
+# define _(i,x)                         catgets(msgcat, NL_SETD, i, x)
+#else
+# define _(i,x)                         (x)
+#endif
 
 static void
 usage(void)
 {
-	fprintf(stderr, catgets(msgcat, NL_SETD, 1, "Usage: %s [-snrvma]"), short_program_name);
+	fprintf(stderr, _(1, "Usage: %s [-snrvma]"), short_program_name);
 	fputc('\n', stderr);
 }
 
@@ -167,9 +177,11 @@ main(int argc, char **argv)
 		fputs(utsname.machine, stdout);
 	}
 	putchar('\n');
+#ifdef ENABLE_NLS
 	if(msgcat)
 	{
 		catclose(msgcat);
 	}
+#endif
 	return 0;
 }
