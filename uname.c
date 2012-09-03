@@ -70,10 +70,6 @@ main(int argc, char **argv)
 #ifdef ENABLE_NLS
 	setlocale(LC_ALL, "");
 	msgcat = catopen("UXuname", NL_CAT_LOCALE);
-	if(!msgcat)
-	{
-		perror("UXuname.cat");
-	}
 #endif
 	if(argv[0])
 	{
