@@ -12,19 +12,11 @@
 ##  See the License for the specific language governing permissions and
 ##  limitations under the License.
 
-SUBDIRS = C en_GB
+endir = ${localedir}/en
 
-bin_PROGRAMS = uname
+en_DATA = UXuname.cat
 
-doc_DATA = LICENSE-2.0 uname.1.html
+CLEANFILES = UXuname.cat
 
-uname_SOURCES = uname.c
-
-dist_man1_MANS = uname.1
-
-uname.1: uname.1.xml
-	$(XML2MAN) $<
-
-uname.1.html: uname.1.xml
-	$(XML2HTML) $< > $@
-
+.msg.cat:
+	$(GENCAT) $@ $<

@@ -27,6 +27,12 @@
 #ifdef HAVE_SYS_UTSNAME_H
 # include <sys/utsname.h>
 #endif
+#ifdef HAVE_LOCALE_H
+# include <locale.h>
+#endif
+#ifdef HAVE_NL_TYPES_H
+# include <nl_types.h>
+#endif
 
 #ifndef EXIT_FAILURE
 # define EXIT_FAILURE                   1
@@ -44,11 +50,13 @@
 	(UNAME_SYSTEM|UNAME_NODENAME|UNAME_RELEASE|UNAME_VERSION|UNAME_MACHINE)
 
 static const char *short_program_name = "uname";
+static nl_catd msgcat;
 
 static void
 usage(void)
 {
-	fprintf(stderr, "Usage: %s [-snrvma]\n", short_program_name);
+	fprintf(stderr, catgets(msgcat, NL_SETD, 1, "Usage: %s [-snrvma]"), short_program_name);
+	fputc('\n', stderr);
 }
 
 int
@@ -59,9 +67,17 @@ main(int argc, char **argv)
 	const char *t;
 	struct utsname utsname;
 
+#ifdef ENABLE_NLS
+	setlocale(LC_ALL, "");
+	msgcat = catopen("UXuname", NL_CAT_LOCALE);
+	if(!msgcat)
+	{
+		perror("UXuname.cat");
+	}
+#endif
 	if(argv[0])
 	{
-		if(NULL != (t = strchr(argv[0], '/')))
+		if(NULL != (t = strrchr(argv[0], '/')))
 		{
 			short_program_name = t + 1;
 		}
@@ -155,5 +171,9 @@ main(int argc, char **argv)
 		fputs(utsname.machine, stdout);
 	}
 	putchar('\n');
+	if(msgcat)
+	{
+		catclose(msgcat);
+	}
 	return 0;
 }

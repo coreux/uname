@@ -1,0 +1,108 @@
+'\" t
+.\"     Title: uname
+.\"    Author: Mo McRoberts
+.\" Generator: DocBook XSL Stylesheets v1.77.1 <http://docbook.sf.net/>
+.\"      Date: 09/03/2012
+.\"    Manual: User Commands
+.\"    Source: System Manager's Manual
+.\"  Language: English
+.\"
+.TH "UNAME" "1" "09/03/2012" "System Manager's Manual" "User Commands"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+uname \- print operating system name
+.SH "SYNOPSIS"
+.HP \w'\fBuname\fR\ 'u
+\fBuname\fR [\fB\-snrvma\fR]
+.SH "DESCRIPTION"
+.PP
+The
+\fBuname\fR
+utility writes information about the running system to standard output\&.
+.PP
+By default,
+\fBuname\fR
+writes the operating system name\&.
+.SH "OPTIONS"
+.PP
+\fB\-a\fR
+.RS 4
+Behave as though all of the options
+\fB\-snrvm\fR
+were specified\&.
+.RE
+.PP
+\fB\-s\fR
+.RS 4
+Write the operating system name\&.
+.RE
+.PP
+\fB\-n\fR
+.RS 4
+Write the nodename\&.
+.RE
+.PP
+\fB\-r\fR
+.RS 4
+Write the operating system release\&.
+.RE
+.PP
+\fB\-v\fR
+.RS 4
+Write the operating system version\&.
+.RE
+.PP
+\fB\-m\fR
+.RS 4
+Write the system hardware type\&.
+.RE
+.SH "DIAGNOSTICS"
+.PP
+The following error values are returned:
+.\" line length increase to cope w/ tbl weirdness
+.ll +(\n(LLu * 62u / 100u)
+.TS
+ll.
+\fIError value\fR	\fIDiagnostic\fR
+T{
+\fB0\fR
+T}	T{
+Successful completion\&.
+T}
+T{
+\fB>0\fR
+T}	T{
+An error occurred\&.
+T}
+.TE
+.\" line length decrease back to previous value
+.ll -(\n(LLu * 62u / 100u)
+.sp
+.SH "STANDARDS"
+.PP
+The
+\fBuname\fR
+utility conforms to the
+Single UNIX Specification, Version 3 (SUSv3)\&.
+.SH "SEE ALSO"
+.PP
+
+\fBuname\fR(3)\&.

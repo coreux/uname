@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry xml:id="echo-1" xmlns="http://docbook.org/ns" version="5.0" xml:lang="en">
+  <info>
+	<title>User Commands</title>
+	<productname>System Manager's Manual</productname>
+	<authorgroup>
+	  <author>
+		<personname>
+		  <firstname>Mo</firstname>
+		  <surname>McRoberts</surname>
+		</personname>
+	  </author>
+	</authorgroup>
+	<copyright>
+	  <year>2012</year>
+	  <holder>Mo McRoberts</holder>
+	</copyright>
+  </info>
+  
+  <refmeta>
+	<refentrytitle>uname</refentrytitle>
+	<manvolnum>1</manvolnum>
+  </refmeta>
+  
+  <refnamediv>
+	<refname>uname</refname>
+	<refpurpose>print operating system name</refpurpose>
+  </refnamediv>
+  
+  <refsynopsisdiv>
+	<cmdsynopsis>
+	  <command>uname</command>
+	  <arg choice="opt"><option>-snrvma</option></arg>
+	</cmdsynopsis>
+  </refsynopsisdiv>
+  
+  <refsect1>
+	<title>Description</title>
+	<para>
+	  The <command>uname</command> utility writes information about the
+	  running system to standard output.
+	</para>
+	<para>
+	  By default, <command>uname</command> writes the operating system name.
+	</para>
+  </refsect1>
+  
+  <refsect1>
+	<title>Options</title>
+	<variablelist>
+
+	  <varlistentry>
+		<term><option>-a</option></term>
+		<listitem>
+		  <para>
+			Behave as though all of the options <option>-snrvm</option> were
+			specified.
+		  </para>
+		</listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+		<term><option>-s</option></term>
+		<listitem><para>Write the operating system name.</para></listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+		<term><option>-n</option></term>
+		<listitem><para>Write the nodename.</para></listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+		<term><option>-r</option></term>
+		<listitem><para>Write the operating system release.</para></listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+		<term><option>-v</option></term>
+		<listitem><para>Write the operating system version.</para></listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+		<term><option>-m</option></term>
+		<listitem><para>Write the system hardware type.</para></listitem>
+	  </varlistentry>
+
+	</variablelist>
+  </refsect1>
+
+  <refsect1>
+	<title>Diagnostics</title>
+	<para>
+	  The following error values are returned:
+	</para>
+	<segmentedlist>
+	  <segtitle>Error value</segtitle>
+	  <segtitle>Diagnostic</segtitle>
+	  <seglistitem>
+		<seg><errorcode>0</errorcode></seg>
+		<seg>Successful completion.</seg>
+	  </seglistitem>
+	  <seglistitem>
+		<seg><errorcode>&gt;0</errorcode></seg>
+		<seg>An error occurred.</seg>
+	  </seglistitem>
+	</segmentedlist>
+  </refsect1>
+
+  <refsect1>
+	<title>Standards</title>
+	<para>
+	  The <command>uname</command> utility conforms to the
+	  <citetitle>Single UNIX Specification, Version 3 (SUSv3)</citetitle>.
+	</para>
+  </refsect1>
+
+  <refsect1>
+	<title>See also</title>
+	<para>
+	  <citerefentry>
+		<refentrytitle>uname</refentrytitle>
+		<manvolnum>3</manvolnum>
+	  </citerefentry>.
+	</para>
+  </refsect1>
+
+</refentry>

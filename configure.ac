@@ -21,8 +21,14 @@ AC_CONFIG_HEADER([config.h])
 
 AC_PROG_CC
 
+UX_BUILD_DOCS
+UX_ENABLE_NLS
+
 AC_CHECK_HEADERS([unistd.h sys/utsname.h])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile
+C/Makefile
+en_GB/Makefile
+])
 
 AC_OUTPUT
