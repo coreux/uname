@@ -49,6 +49,8 @@
 #define UNAME_ALL \
 	(UNAME_SYSTEM|UNAME_NODENAME|UNAME_RELEASE|UNAME_VERSION|UNAME_MACHINE)
 
+#define UNAME_MSG_USAGE                 1
+
 static const char *short_program_name = "uname";
 
 #ifdef ENABLE_NLS
@@ -65,7 +67,7 @@ static nl_catd msgcat;
 static void
 usage(void)
 {
-	fprintf(stderr, _(1, "Usage: %s [-snrvma]"), short_program_name);
+	fprintf(stderr, _(UNAME_MSG_USAGE, "Usage: %s [-snrvma]"), short_program_name);
 	fputc('\n', stderr);
 }
 
